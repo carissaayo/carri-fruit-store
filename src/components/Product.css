@@ -1,0 +1,6 @@
+@media (max-width: 420px) {
+  .product {
+    max-width: 80%;
+   margin-left: 10%;
+  }
+}
