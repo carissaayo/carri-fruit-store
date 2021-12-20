@@ -22,18 +22,13 @@ function App() {
     if (loading) {
       return (
         <div className="loading relative top-0 left-0 w-screen h-screen">
-            <h1 className='absolute text-4xl font-bold top-96 left-44'>Loading ...</h1>
+            <h1 className='absolute text-3xl font-bold top-96 left-32'>Loading ...</h1>
         </div>
       );
     }
   return (
     <div className="bg-gray-300 relative">
-
-  {loading?
-(<div className="loading relative top-0 left-0 w-screen h-screen">
-            <h1 className='absolute text-4xl font-bold top-96 left-96'>Loading ...</h1>
-        </div>):
-      (<BrowserRouter forceRefresh={true}>
+      <BrowserRouter forceRefresh={true}>
         <Header />
         <SideBar />
         <main>
@@ -47,7 +42,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-      </BrowserRouter>)}
+      </BrowserRouter>
     </div>
   );
 }

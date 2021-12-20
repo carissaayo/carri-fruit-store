@@ -33,7 +33,7 @@ const ProductsProvider = ({ children }) => {
      try {
        dispatch({ type: "SINGLE_PRODUCT_LOADING" });
        const response = await axios.get(
-         `https://carri-store-api.herokuapp.com/api/produces/api/produces/${id}`
+         `https://carri-store-api.herokuapp.com/api/produces/${id}`
        );
       
        const product = await response.data.produce;
@@ -63,13 +63,15 @@ const ProductsProvider = ({ children }) => {
   const handleSearch = async()=>{
        try {
          if (  filterValue=== "all" ) {
-           const response = await axios.get(`/api/produces?name=${searchValue}`);
+           const response = await axios.get(
+             `https://carri-store-api.herokuapp.com/api/produces/?name=${searchValue}`
+           );
            const products = await response.data.produces;
            dispatch({ type: "DISPLAY_ITEMS", payload: products });
            localStorage.setItem("products", JSON.stringify(products));
          } else {
            const response = await axios.get(
-             `/api/produces?isFruit=${filterValue}&name=${searchValue}`
+             `https://carri-store-api.herokuapp.com/api/produces/?isFruit=${filterValue}&name=${searchValue}`
            );
            const products = await response.data.produces;
            dispatch({ type: "DISPLAY_ITEMS", payload: products });

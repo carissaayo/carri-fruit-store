@@ -32,7 +32,7 @@ const CartProvider = ({children})=>{
 
       dispatch({ type: "CART_LOADING" });
      const response = await axios.get(
-       `https://carri-store-api.herokuapp.com/api/produces/api/produces/${id}`
+       `https://carri-store-api.herokuapp.com/api/produces/${id}`
      );
      const produce = await response.data.produce; 
      dispatch({ type: "ADD_TO_CART", payload: produce  });
