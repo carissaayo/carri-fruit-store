@@ -3,7 +3,7 @@ import CartItem from '../components/CartItem';
 import { useCartContext } from '../context/cart_context';
 import "./CartScreen.css"
 const CartScreen = () => {
-const {cart,clearCart} =useCartContext();
+const { cart, clearCart, total } = useCartContext();
     let navigate = useNavigate();
 
 if(cart.length < 1){
@@ -48,7 +48,7 @@ if(cart.length < 1){
           </div>
           <div className=" text-center py-12  md:mx-32 ">
             <p className="font-bold md:text-3xl text-2xl mb-8">
-              Total : <span className="lg:ml-40 md:ml-20 sm:ml-12">$400.00</span>
+              Total : <span className="lg:ml-40 md:ml-20 sm:ml-12">${total}</span>
             </p>
           </div>
           <div className=" text-center py-12 border-b-2 border-t-2">

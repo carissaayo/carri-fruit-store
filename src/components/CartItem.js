@@ -5,11 +5,11 @@ const CartItem = ({cartItem}) => {
     useCartContext();
 
     return (
-      <div className="cart-item flex justify-between items-center  m-8   md:m-24 md:mx-    max-w-5xl bg-gray-100 h-54   sm:p-8 p-4 rounded-2xl">
+      <div className="cart-item flex justify-between items-center  m-8 mx-0   md:m-24 max-w-5xl bg-gray-100 h-54   sm:p-8 p-4 rounded-2xl">
         <img
           src={imageUrl}
           alt="cart item"
-          className="md:w-44 sm:w-32 md:w-20 md:h-36 h-24"
+          className="md:w-44 sm:w-32 md:w-20 md:h-36 h-24 w-20"
         />
        
           <p className="font-bold">{name}</p>
@@ -26,7 +26,7 @@ const CartItem = ({cartItem}) => {
           </span>
         </p>
         <button onClick={() => removeFromCart(id)}>
-          <i className="fa fa-trash cursor-pointer"></i>
+          <i className="fa fa-trash cursor-pointer "></i>
         </button>
       </div>
     );
