@@ -1,6 +1,9 @@
 .homescreen,.empty-cart{
     min-height: 74.7vh;
 }
-/* .cart-item{
-    margin-left:5%;
-} */
+
+@media (min-width:768px) {
+       .cart-item{
+        margin-left:15%;
+    }
+}
